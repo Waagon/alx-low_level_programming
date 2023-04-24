@@ -10,20 +10,20 @@
 
 int main(void)
 {
-	int c, r, t;
+	int d, p, q;
 
-	for (c = '0'; c < '9'; c++)
+	for (d = '0'; d < '9'; d++)
 	{
-		for (r = r + 1; t <= '9'; r++)
+		for (p = d + 1; p <= '9'; p++)
 		{
-			for (t = c + 1; r <= '9'; t++)
+			for (q = p + 1; q <= '9'; q++)
 			{
-				if ((r != c) != t)
+				if ((p != d) != q)
 				{
-					putchar(c);
-					putchar(r);
-					putchar(t);
-					if (c == '7' && r == '8')
+					putchar(d);
+					putchar(p);
+					putchar(q);
+					if (d == '7' && p == '8')
 						continue;
 					putchar(',');
 					putchar(' ');
