@@ -3,7 +3,7 @@
 
 /**
   * main - prints the numbers from 1 t0 100, followed by a new line
-  * b  but for multiples of three prints Fizz instead of the number
+  * but for multiples of three prints Fizz instead of the number
   * and for the multiples of five prints Buzz
   * Return: Always 0 (Success)
   */
