@@ -1,42 +1,52 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
   * str_concat - a function that concatenates two strings
-  * @s1: input one to concat
-  * @s2: input one to concat
-  * Return: concat of s1 and s2
+  * @s1: the first string to concatenate
+  * @s2: the second string to concatenate
+  *
+  * Return: the two strings concatenated
   */
 char *str_concat(char *s1, char *s2)
 {
-	char *conct;
-	int i, ci;
+	int m = 0, n = 0, o = 0, p = 0;
+	char *s;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	 i = ci = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[ci] != '\0')
-		ci++;
-	conct = malloc(sizeof(char) * (i + ci + 1));
+	while (s1[m])
+		m++;
 
-	if (conct == NULL)
+	while (s2[n])
+		n++;
+
+	p = m + n;
+	s = malloc((sizeof(char) * p) + 1);
+
+	if (s == NULL)
 		return (NULL);
-	i = ci = 0;
-	while (s1[i] != '\0')
+
+	n = 0;
+
+	while (o < p)
 	{
-		conct[i] = s1[i];
-		i++;
+		if (o <= m)
+			s[o] = s1[o];
+
+		if (o >= m)
+		{
+			s[o] = s2[n];
+			n++;
+		}
+
+		o++;
 	}
 
-	while (s2[ci] != '\0')
-	{
-		conct[i] = s2[ci];
-		i++, ci++;
-	}
-	conct[i] = '\0';
-	return (conct);
+	s[o] = '\0';
+	return (s);
 }
